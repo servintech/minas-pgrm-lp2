@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Playground de Lógica – E‑commerce Edition</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>E‑commerce Playground 🚀</h1>
+
+  <!-- 1. Frete grátis (if / else) -->
+  <section id="shipping">
+    <h2>1. Calculadora de Frete Grátis (if / else)</h2>
+    <label for="totalInput">Valor da compra (R$):</label>
+    <input type="number" id="totalInput" min="0" step="0.01" />
+    <button id="btnShipping">Calcular</button>
+    <p class="output" id="shippingResult"></p>
+  </section>
+
+  <!-- 2. Tipo de usuário (switch case) -->
+  <section id="userType">
+    <h2>2. Boas‑vindas Personalizadas (switch case)</h2>
+    <label for="userInput">Tipo de usuário:</label>
+    <select id="userInput">
+      <option value="guest">Visitante</option>
+      <option value="registered">Cadastrado</option>
+      <option value="premium">Premium</option>
+      <option value="admin">Admin</option>
+    </select>
+    <button id="btnUser">Mostrar mensagem</button>
+    <p class="output" id="userResult"></p>
+  </section>
+
+  <!-- 3. Pode finalizar compra? (&&) -->
+  <section id="checkout">
+    <h2>3. Pode finalizar a compra? (&&)</h2>
+    <label><input type="checkbox" id="hasItems" /> Há itens no carrinho</label>
+    <label><input type="checkbox" id="paymentOk" /> Pagamento aprovado</label>
+    <button id="btnCheckout">Verificar</button>
+    <p class="output" id="checkoutResult"></p>
+  </section>
+
+  <!-- 4. Desconto Especial liberado? (||) -->
+  <section id="specialDiscount">
+    <h2>4. Desconto Especial liberado? (||)</h2>
+    <label><input type="checkbox" id="firstPurchase" /> Primeira compra</label>
+    <label><input type="checkbox" id="hasVipCoupon" /> Possui cupom VIP</label>
+    <button id="btnSpecial">Checar desconto</button>
+    <p class="output" id="specialResult"></p>
+  </section>
+
+  <script src="main.js"></script>
+</body>
+</html>
