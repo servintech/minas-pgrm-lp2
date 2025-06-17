@@ -9,14 +9,13 @@
 // Se a usuária não estiver logada, exiba: "Faça login para continuar."
 // Se a usuária estiver logada, mas o carrinho estiver vazio, exiba: "Seu carrinho está vazio."
 
-let usuariaLogada = true; // Simula se a usuária está logada
-let carrinhoVazio = false; // Simula se o carrinho está vazio
+let usuariaLogada = false; // Simula se a usuária está logada
+let carrinhoTemItens = true; // Simula se o carrinho está vazio
 
-if (usuariaLogada && !carrinhoVazio) {
-    console.log("Pedido em andamento!");
+if (usuariaLogada && carrinhoTemItens) {
+    console.log(`Pedido em andamento!`)
 } else if (!usuariaLogada) {
-    console.log("Faça login para continuar.");
+    console.log(`Faça login para continuar!`)
 } else {
-    console.log("Seu carrinho está vazio.");
+    console.log(`Seu carrinho está vazio.`)
 }
-
