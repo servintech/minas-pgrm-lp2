@@ -1,11 +1,21 @@
 // 1. Frete grátis 
 function calculaFrete() {
-  const total = Number(document.getElementById('totalInput').value);
+  const valorTotal = Number(document.getElementById('totalInput').value);
   let mensagem;
 
   // Se o total for maior ou igual a 150, a mensagem deve ser 'Frete grátis! 🎉'
-  // Se o total for maior ou igual a 0 (mas menor que 150), a mensagem deve ser 'Frete: R$ 20.00 😅'
-  // Se o valor for negativo ou inválido, a mensagem deve ser 'Valor inválido.'
+ if (valorTotal >= 150) {
+    mensagem = "Frete grátis! 🎉"
+  } else if (valorTotal < 20) {
+    // Se o total for menor que vinte entao o pedido minimo nao foi atingido e nao vai ter frete disponivel
+    mensagem = "Pedido mínimo não atingido - Frete indisponivel"
+  } else if (valorTotal >= 20) {
+    // Se o total for maior ou igual a 0 (mas menor que 150), a mensagem deve ser 'Frete: R$ 20.00 😅'
+    mensagem = "Frete: R$ 20.00 😅"
+  } else {
+    // Se o valor for negativo ou inválido, a mensagem deve ser 'Valor inválido.'
+    mensagem = "Valor inválido."
+  }
 
   document.getElementById('shippingResult').textContent = mensagem;
 }
@@ -16,10 +26,12 @@ function mensagemDeBoasVindas() {
   let mensagem;
 
   // Usar switch case para definir a mensagem com base no tipo:
-  // - 'guest': "Oi, visitante! Crie uma conta pra ganhar descontos."
-  // - 'registered': "Bem-vinda de volta!"
+  // - 'convidada': "Oi, visitante! Crie uma conta pra ganhar descontos."
+  // - 'registrada': "Bem-vinda de volta!"
   // - 'premium': "Olá, cliente premium! Frete grátis garantido."
   // - 'admin': "Admin logado. Painel disponível."
+  // - 'minas premium': "minas premium logadas bem-vindas"
+
   // Qualquer outro valor: "Tipo desconhecido."
 
   document.getElementById('userResult').textContent = mensagem;
