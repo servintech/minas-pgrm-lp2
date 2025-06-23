@@ -25,12 +25,25 @@ function mensagemDeBoasVindas() {
   const tipo = document.getElementById('userInput').value;
   let mensagem;
 
+  switch (tipo) {
+    case "convidada":
+      mensagem = "Oi, visitante! Crie uma conta pra ganhar descontos.";
+      break;
+    case "registrada":
+      mensagem = "Bem-vinda de volta!";
+      break;
+    case "premium":
+      mensagem = "Olá, cliente premium! Frete grátis garantido.";
+      break;
+    default:
+      mensagem = "Tipo desconhecido.";
+      break;
+  }
   // Usar switch case para definir a mensagem com base no tipo:
   // - 'convidada': "Oi, visitante! Crie uma conta pra ganhar descontos."
   // - 'registrada': "Bem-vinda de volta!"
   // - 'premium': "Olá, cliente premium! Frete grátis garantido."
   // - 'admin': "Admin logado. Painel disponível."
-  // - 'minas premium': "minas premium logadas bem-vindas"
 
   // Qualquer outro valor: "Tipo desconhecido."
 
