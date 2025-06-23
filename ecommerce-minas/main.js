@@ -39,6 +39,8 @@ function mensagemDeBoasVindas() {
       mensagem = "Tipo desconhecido.";
       break;
   }
+  document.getElementById('userResult').textContent = mensagem;
+
   // Usar switch case para definir a mensagem com base no tipo:
   // - 'convidada': "Oi, visitante! Crie uma conta pra ganhar descontos."
   // - 'registrada': "Bem-vinda de volta!"
@@ -47,7 +49,6 @@ function mensagemDeBoasVindas() {
 
   // Qualquer outro valor: "Tipo desconhecido."
 
-  document.getElementById('userResult').textContent = mensagem;
 }
 
 // 3. Pode finalizar a compra?
@@ -58,7 +59,11 @@ function podeFazerCheckout() {
 
   // Se os dois forem verdadeiros (items e pagamento), a mensagem deve ser 'Compra liberada 🚀'
   // Caso contrário, deve ser 'Compra bloqueada. Verifique carrinho/pagamento.'
-
+  if (items && pagamento) {
+    mensagem = "Compra liberada 🚀"
+  } else {
+    mensagem = "Compra bloqueada. Verifique carrinho/pagamento."
+  }
   document.getElementById('checkoutResult').textContent = mensagem;
 }
 
@@ -70,6 +75,11 @@ function temDescontoEspecial() {
 
   // Se pelo menos um for verdadeiro (primeiraCompra ou cupomVip), a mensagem deve ser 'Desconto especial aplicado! 🎁'
   // Caso contrário, deve ser 'Desconto não disponível.'
+  if (primeiraCompra || cupomVip) {
+      mensagem = 'Desconto especial aplicado! 🎁';    
+  } else {
+    mensagem = 'Desconto não disponível.'
+  }
 
   document.getElementById('specialResult').textContent = mensagem;
 }
